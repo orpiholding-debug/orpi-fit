@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../core/theme/orpi_theme.dart';
+
 class OrpiApp extends StatelessWidget {
   const OrpiApp({super.key});
 
@@ -8,19 +10,12 @@ class OrpiApp extends StatelessWidget {
     return MaterialApp(
       title: 'Orpi Fit',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: const Color(0xFF5B6CFF),
-        brightness: Brightness.light,
-      ),
-      home: const Scaffold(
+      theme: OrpiTheme.light(),
+      home: Scaffold(
         body: Center(
           child: Text(
             'Hola, soy Orpi 👋',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w700,
-            ),
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
       ),
